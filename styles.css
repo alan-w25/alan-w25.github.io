@@ -17,9 +17,8 @@
     transition: 0.3s;
 }
 .nav-item > a:hover{
-    background-color: white; 
+    background-color: gray; 
     opacity: 1;
-    color: black;
 }
 
 .footer {
@@ -36,14 +35,13 @@
     font-size: 30px;
     text-decoration: none!important;
     opacity: 0.8;
-    transition: 0.3s;
+    transition: 0.5s;
     padding-left: 10px;
     padding-right: 10px;
     
 }
 .footer > a :hover {
-    color: black;
-    background-color:rgba(255,255,255,100%);
+    background-color:gray;
     opacity: 1;
 }
 .footer > p{
