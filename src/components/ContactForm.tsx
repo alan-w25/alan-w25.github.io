@@ -1,15 +1,56 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
+
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
+}
+
 
 const ContactForm = () => {
-    const [name, setName] = useState(''); 
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const [formData, setFormData] = useState<FormData>({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const [status, setStatus] = useState<string>('');
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        console.log(`Changing ${name} to ${value}`);
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault(); 
-        console.log('submitted form: ', { name, email, message});
+        
+        const response = await fetch('/api/contact', {
+            method:'POST',
+            headers: {
+                'Content-Type':'application/json'
+            }, 
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            setStatus('Message sent successfully!'); 
+            setFormData({
+                name:'',
+                email:'',
+                message:''
+            });
+
+        } else {
+            setStatus('Failed to send message');
+        }
+
     }
 
     return (
@@ -19,9 +60,10 @@ const ContactForm = () => {
                 <input
                     type="text"
                     id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="mt-1 block w-full border border-gray-300 rounded-md text-black shadow-sm py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     required
                 />
             </div>
@@ -31,8 +73,9 @@ const ContactForm = () => {
                 <input
                     type="email"
                     id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     required
                 />
@@ -41,8 +84,9 @@ const ContactForm = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
                 <textarea
                     id="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     required
                 />
@@ -53,6 +97,7 @@ const ContactForm = () => {
                 >
                     Send Message
                 </button>
+                {status && <p className="mt-4 text-black">{status}</p>}
         </form>
     );
 }

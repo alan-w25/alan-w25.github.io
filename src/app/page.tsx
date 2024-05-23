@@ -49,26 +49,25 @@ export default function Home() {
           <div className="container mx-auto flex flex-col md:flex-row items-start px-4">
 
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
+              <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
               <p className="text-lg mb-8">Fill out the form below to send me a message.</p>
               <div className="w-full md:w-4/5">
                 <ContactForm />
               </div>
             </div>
 
-            <div className="md:w-1/2 md:pl-8 mt-8 md:mt-0">
-              <h2 className="text-3xl font-bold mb-4">Get in Touch!</h2>
-              <p className="text-lg">
-                <FontAwesomeIcon icon={faEnvelope}/>
-                <a href="mailto:alan.lw25@gmail.com" className="hover:underline"> alan.lw25@gmail.com</a>
+            <div className="md:w-1/2 md:pl-8 mt-8 md:mt-0 flex flex-col justify-center">
+              <p className="text-lg flex items-center mb-2">
+                <FontAwesomeIcon className="mr-2" icon={faEnvelope}/>
+                <a href="mailto:alan.lw25@gmail.com" className="hover:underline">alan.lw25@gmail.com</a>
               </p>
-              <p className="text-lg">
-                <FontAwesomeIcon icon={faLinkedin}/>
-                <a href="https://www.linkedin.com/in/alanlwu" className="hover:underline" target="_blank"> linkedin.com/in/alanlwu</a>
+              <p className="flex items-center text-lg mb-2">
+                <FontAwesomeIcon className="mr-2" icon={faLinkedin}/>
+                <a href="https://www.linkedin.com/in/alanlwu" className="hover:underline" target="_blank">linkedin.com/in/alanlwu</a>
               </p>
-              <p className="text-lg">
-                <FontAwesomeIcon icon={faGithub}/>
-                <a href="https://github.com/alan-w25" className="hover:underline" target="_blank"> github.com/alan-w25</a>
+              <p className=" flex items-center text-lg mb-2">
+                <FontAwesomeIcon className="mr-2" icon={faGithub} />
+                <a href="https://github.com/alan-w25" className="hover:underline" target="_blank">github.com/alan-w25</a>
               </p>
             </div>
           </div>
