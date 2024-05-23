@@ -5,7 +5,7 @@ const NonHomeHeader = () => (
         <nav className = "container mx-auto flex justify-between items-center py-4 px-6">
             <Link href="/" className="text-2xl text-gray-900 hover:underline">Alan Wu</Link>
             <ul className="flex space-x-6 text-gray-700">
-                <li><a href="/" className="hover:underline">Home</a></li>
+                <li><Link href="/" className="hover:underline">Home</Link></li>
             </ul>
         </nav>
     </header>
