@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactForm from "../components/ContactForm";
+import MainLayout from "../components/MainLayout";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -7,7 +8,7 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function Home() {
   return (
-    <div>
+    <MainLayout>
       <section id="about" className="py-16 bg-white">
         <div className="container mx-auto flex flex-col md:flex-row items-center px-4">
             <div className="md:w-1/2">
@@ -30,7 +31,7 @@ export default function Home() {
                 
                 <br />
                 <br />
-                If you're interested in my work please take a look at my 
+                If you&apos;re interested in my work please take a look at my 
                 <a href="/resume.pdf" className="text-blue-500 hover:underline" target="_blank"> resume </a>
                 and projects. 
                 <br /> 
@@ -39,7 +40,7 @@ export default function Home() {
 
                 <br /> 
                 <br />
-                Please drop me a message if you'd like to chat!
+                Please drop me a message if you&apos;d like to chat!
               </p>
             </div>
         </div>
@@ -72,6 +73,6 @@ export default function Home() {
             </div>
           </div>
       </section>
-    </div>
+    </MainLayout>
   );
 }
