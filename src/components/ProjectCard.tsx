@@ -5,30 +5,43 @@ export interface Project{
     link: string;
     techStack: string;
     imageUrl: string;
+    github: string;
 }
 
 const projects: Project[] = [
     {
         title:"Survival Analysis of Lung Cancer Data for Non-Invasive Cancer Detection", 
         description:"My senior capstone research project. I researched the potential of a novel DNA sequencing method called DELFI to predict lung cancer patient survival times and outcomes.",
-        link:"https://github.com/alan-w25/Cancer-Capstone",
+        github:"https://github.com/alan-w25/Cancer-Capstone",
         techStack:"Python, Sci-kit Learn, Pandas, Numpy, Matplotlib, Seaborn, Skurv, Lifelines",
-        imageUrl:"/delfi.png"
+        imageUrl:"/delfi.png",
+        link:"/project_files/capstone_report.pdf",
     }, 
     {
         title:"Online Retail Analysis", 
         description:"Modeled the unit price of items based on the quantity of items purchased. Used the K-means clustering algorithm to segment customers based on their purchasing behavior. Compared several regression methods including linear regression, decision tree regression, and ensemble methods",
-        link:"https://github.com/alan-w25/Stat-Learning-Final-Project",
+        github:"https://github.com/alan-w25/Stat-Learning-Final-Project",
         techStack:"Python, Pandas, Matplotlib, Seaborn, Scikit-learn",
-        imageUrl:"/online_retail.png"
+        imageUrl:"/online_retail.png", 
+        link:"/project_files/online_retail.pdf",
     }, 
     {
         title:"Bayesian Clinical Heart Failure Prediction", 
         description:"Predicted clinical survival status of clinical heart failure patients using traditional regression methods to predict time till death. Modeled bayesian regression models to predict time till death and logistic regression to predict death event status.",
-        link:"https://github.com/alan-w25/Bayesian-Final-Project",
+        github:"https://github.com/alan-w25/Bayesian-Final-Project",
         techStack:"R, ggplot2, dplyr, stanglm, brms",
-        imageUrl:"/heart_failure_proj.png"
-    }, 
+        imageUrl:"/heart_failure_proj.png", 
+        link: "/project_files/Heart_Failure_Analysis.pdf",
+    },
+    {
+        title:"Chinese MNIST Drawing Classification", 
+        description:"Classified hand drawn Chinese digits using convolutional network. Used as a tool to teach myself how to use deep learning models in production and practice my chinese.",
+        github:"https://github.com/alan-w25/chinese-mnist",
+        techStack:"Python, Pytorch, Fastapi, Next.js, Docker, Tailwind.css, Azure",
+        imageUrl:"/chinese-mnist.png",
+        link:"https://chinese-mnist-predictor.azurewebsites.net/"
+    },
+
 ]; 
 
 export default function ProjectCard() {
@@ -46,9 +59,13 @@ export default function ProjectCard() {
                             className="w-full h-48 object-cover"/>
                             <div className="p-4">
                                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                                <p className='text-gray-700 mb-2'>Technologies: {project.techStack}</p>
+                                <p className='text-gray-700 mb-2'>Technologies: {project.techStack}<br/></p>
                                 <p className="text-gray-700 mb-4">{project.description}</p>
-                                <a href={project.link} className="text-blue-500 hover:underline">View Project</a>
+                                <div className="mt-8">
+                                <a href={project.link} className="text-blue-500 hover:underline mr-8">View Project</a>
+                                <a href={project.github} className="text-blue-500 hover:underline">Github</a>
+                                </div>
+                                
                             </div>
                         </div>
                     ))}
