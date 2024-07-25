@@ -32,7 +32,7 @@ export default function Home() {
                 <br />
                 <br />
                 If you&apos;re interested in my work please take a look at my 
-                <a href="/resume.pdf" className="text-blue-500 hover:underline" target="_blank"> resume </a>
+                <a href="/Alan_Wu_resume.pdf" className="text-blue-500 hover:underline" target="_blank"> resume </a>
                 and projects. 
                 <br /> 
                 <br /> 
