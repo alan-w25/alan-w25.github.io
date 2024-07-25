@@ -2,7 +2,25 @@ import '../styles/globals.css';
 import '../styles/tailwind.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import Head from 'next/head';
+import { Metadata, Viewport } from 'next'
 
+export const metadata: Metadata = {
+  title: "Alan Wu", 
+  icons: {
+    icon: [
+      {rel: 'shortcut icon', url: '/images/favicon.ico'}, 
+      {rel: 'apple-touch-icon', url:"/images/apple-touch-icon.png"}, 
+      {rel: 'icon', url:"/images/favicon-32x32.png"}, 
+      {rel: 'icon', url: "/images/favicon-16x16.png"},
+      {rel: 'mask-icon', url: "/safari-pinned-tab.svg"}
+    ], 
+  }, 
+}
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff"
+}
 
 
 export default function RootLayout({ children }:{children:React.ReactNode}){
@@ -11,17 +29,6 @@ export default function RootLayout({ children }:{children:React.ReactNode}){
   return (
     <html className="scroll-smooth" lang="en">
       <head>
-        <title>Alan Wu</title>
-        <link rel="shortcut icon" href="/images/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
-        <link rel="manifest" href="/site.webmanifest"/>
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
-        <meta name="msapplication-TileColor" content="#da532c"/>
-        <meta name="theme-color" content="#ffffff"/>
-
-
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
         <script 
           dangerouslySetInnerHTML={{
@@ -30,13 +37,12 @@ export default function RootLayout({ children }:{children:React.ReactNode}){
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+            
+            gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
           `,
           }}>
         </script>
       </head>
-      
-      
       <body className = "flex flex-col min-h-screen">
         {children}
       </body>

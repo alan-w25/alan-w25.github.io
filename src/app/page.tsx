@@ -16,8 +16,8 @@ export default function Home() {
                 src="/profile.png"
                 alt="Alan Wu"
                 width={400}
-                height={200}
-                className="rounded-sm shadow-sm"
+                height={400}
+                className="rounded-xl shadow-sm h-auto"
               />
             </div>
             <div className="md:w-1/2 md:pl-8 mt-8 md:mt-0">
