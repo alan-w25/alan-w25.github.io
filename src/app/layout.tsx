@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     icon: [
       {rel: 'shortcut icon', url: '/images/favicon.ico'}, 
       {rel: 'apple-touch-icon', url:"/images/apple-touch-icon.png"}, 
-      {rel: 'icon', url:"/images/favicon-32x32.png"}, 
-      {rel: 'icon', url: "/images/favicon-16x16.png"},
+      {rel: 'icon', url:"/favicon-32x32.png"}, 
+      {rel: 'icon', url: "/favicon-16x16.png"},
       {rel: 'mask-icon', url: "/safari-pinned-tab.svg"}
     ], 
   }, 
@@ -37,7 +37,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}){
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            
+
             gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
           `,
           }}>
