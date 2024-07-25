@@ -29,7 +29,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}){
   return (
     <html className="scroll-smooth" lang="en">
       <head>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=G-BS9RR2DB2P`} />
         <script 
           dangerouslySetInnerHTML={{
             __html:
@@ -38,7 +38,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}){
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
+            gtag('config', 'G-BS9RR2DB2P');
           `,
           }}>
         </script>
