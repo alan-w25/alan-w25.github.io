@@ -2,8 +2,8 @@ import '../styles/globals.css';
 import '../styles/tailwind.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
-import Head from 'next/head';
 import { Metadata, Viewport } from 'next'
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: "Alan Wu", 
@@ -28,21 +28,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}){
 
   return (
     <html className="scroll-smooth" lang="en">
-      <head>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=G-BS9RR2DB2P`} />
-        <script 
-          dangerouslySetInnerHTML={{
-            __html:
-            `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-BS9RR2DB2P');
-          `,
-          }}>
-        </script>
-      </head>
+      <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
       <body className = "flex flex-col min-h-screen">
         {children}
       </body>
