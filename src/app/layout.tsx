@@ -28,7 +28,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}){
 
   return (
     <html className="scroll-smooth" lang="en">
-      <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+      <GoogleAnalytics gaId={`${process.env.GOOGLE_ANALYTICS}`} />
       <body className = "flex flex-col min-h-screen">
         {children}
       </body>
