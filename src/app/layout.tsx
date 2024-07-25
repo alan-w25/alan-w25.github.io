@@ -30,7 +30,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}){
   return (
     <html className="scroll-smooth" lang="en">
       <head>  
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-BS9RR2DB2P"/>
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}/>
         <Script
           id="gtag-base"
           strategy="lazyOnload"
@@ -39,7 +39,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}){
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-BS9RR2DB2P');
+              gtag('config', '${process.env.GOOGLE_ANALYTICS}');
             `
           }}  
           />
