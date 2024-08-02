@@ -16,7 +16,7 @@ export default function MissionStatement() {
                   <br/>
                   <ul>
                     <li>
-                      <p className="text-xl">An <span className="text-xl font-semibold text-secondary">aspiring software engineer</span>, with experience in web development, data science, machine learning, and always learning</p>
+                      <p className="text-xl">An <span className="text-xl font-semibold text-secondary">aspiring software engineer</span>, with experience in web development, data science, and machine learning</p>
                     </li>
                     <li className="mt-4">
                       <p className="text-xl">I have worked in marketing, healthcare, e-commerce, and human-computer interaction, of which my primary goal has always been to<span className="text-secondary text-xl font-semibold"> serve others with the technology that I am building</span></p>
