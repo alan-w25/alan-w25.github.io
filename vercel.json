@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      {"source": "/v1/", "destination": "https://alan-w25-github-io.vercel.app/v1"},
+      {"source": "/", "destination": "https://alan-w25-github-io.vercel.app/"}
+    ]
+  }
