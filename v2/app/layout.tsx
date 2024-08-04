@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 // Prevent fontawesome from adding its CSS since we did it manually above:
 import { config } from '@fortawesome/fontawesome-svg-core';
 import {Poppins} from 'next/font/google';
+import Script from 'next/script';
 
 config.autoAddCss = false;
 
@@ -23,8 +24,22 @@ export default function RootLayout({
   
   return (
     <html lang="en">
+      <head>
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}/>
+        <Script
+          id="gtag-base"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html:`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.GOOGLE_ANALYTICS}');
+            `
+          }}  
+          />
+      </head>
       <body className={`bg-white ${poppins.className}`}>
-        <Header />
         {children}
       </body>
     </html>

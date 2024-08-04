@@ -5,7 +5,11 @@ import { faBarsStaggered, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useFadeSlideIn } from '@/hooks/FadeSlide';
 
-const Header = () => {
+interface HeaderProps {
+    currentUnderline: string;
+}
+
+const Header = ({currentUnderline}: HeaderProps) => {
     const [open, setOpen] = useState(false);
     const styleTransition = useFadeSlideIn(200,0,0);
     useEffect(() => {
@@ -20,6 +24,10 @@ const Header = () => {
           document.body.style.overflow = '';
         };
       }, [open]);
+
+    
+
+
     
     return (
         <header className = {`bg-white top-0 left-0 w-full z-20 ${open ? 'fixed h-screen' : ''}`}>
@@ -39,11 +47,11 @@ const Header = () => {
                     </button>
                 </div>
                 <ul className="hidden md:flex space-x-6 text-lg text-secondary">
-                    <li><Link href="/" className="hover:underline">Home</Link></li>
-                    <li><Link href="/code" className="hover:underline">Code</Link></li>
-                    <li><Link href="/data" className="hover:underline">Data</Link></li>
-                    <li><Link href="/books" className="hover:underline">Books</Link></li>
-                    <li><Link href="/about-me" className="hover:underline">About Me</Link></li>
+                    <li><Link href="/" className={` ${currentUnderline==='home' ? 'underline' : ''} hover:underline"`}>Home</Link></li>
+                    <li><Link href="/code" className={` ${currentUnderline==='code' ? 'underline' : ''} hover:underline"`}>Code</Link></li>
+                    <li><Link href="/data" className={` ${currentUnderline==='data' ? 'underline' : ''} hover:underline"`}>Data</Link></li>
+                    <li><Link href="/books" className={` ${currentUnderline==='books' ? 'underline' : ''} hover:underline"`}>Books</Link></li>
+                    <li><Link href="/about-me" className={` ${currentUnderline==='aboutme' ? 'underline' : ''} hover:underline"`}>About Me</Link></li>
                 </ul>
             </nav>
             <div className={`fixed inset-0 flex flex-col justify-center items-center text-center space-y-4 text-2xl transition-opacity duration-300 ease-in-out bg-white md:hidden ${

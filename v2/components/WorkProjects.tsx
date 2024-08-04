@@ -2,6 +2,13 @@ import React from 'react'
 import ProjectCard from './ProjectCard';
 import Link from 'next/link';
 import FadeInSection from './FadeInSection';
+import kitchenPantry from '../public/images/project_header/pantry-tracker.png';
+import chineseMnist from '../public/images/project_header/chinese-mnist-crop.png';
+import onlineRetail from '../public/images/project_header/online_retail.png';
+import heartFailure from '../public/images/project_header/heart_failure.png';
+import delfi from '../public/images/project_header/delfi-resize.png';
+
+
 
 export default function WorkProjects() {
   return (
@@ -35,9 +42,9 @@ export default function WorkProjects() {
                         <ProjectCard 
                             title="Kitchen Pantry App"
                             description="A web app that helps users keep track of their pantry items"
-                            imgSrc="/images/project_header/pantry-tracker.png"
+                            imgSrc={kitchenPantry}
                             technologies={["Next.js, MaterialUI, Firebase"]}
-                            pageLink="#"
+                            pageLink="/code/kitchen-pantry"
                         />
                     </FadeInSection>
                     
@@ -45,9 +52,9 @@ export default function WorkProjects() {
                         <ProjectCard 
                             title="Chinese MNIST Teacher"
                             description="A web app that teaches you how to read, write, and pronounce Chinese digits"
-                            imgSrc="/images/project_header/chinese-mnist-crop.png"
+                            imgSrc={chineseMnist}
                             technologies={["Next.js, TailwindCSS, FastAPI, Pytorch"]}
-                            pageLink="#"
+                            pageLink="/code/chinese-mnist"
                         />
                     </FadeInSection>
                 </div>
@@ -55,7 +62,7 @@ export default function WorkProjects() {
             </div>
             <div id="data-projects-home-container" className="w-full mx-auto flex flex-col mt-24">
                 <FadeInSection fadeDuration={300} slideDuration={300} distance="5vh">
-                    <div id="data-projects-home-header" className="container w-full mx-auto flex flex-row justify-between">
+                    <div id="data-projects-home-header" className="container w-full mx-auto items-center flex flex-row justify-between">
                         <h2 id="data-project-header" className="text-xl font-semibold text-black">Data Projects</h2>
                         <Link href="/data">
                             <button className="w-36 
@@ -72,12 +79,12 @@ export default function WorkProjects() {
                         </Link>
                     </div>
                 </FadeInSection>
-                <div id="data-projects-card" className="flex flex-row space-x-10 mt-10">
+                <div id="data-projects-card" className="flex items-center justify-center flex-row space-x-10 mt-10">
                     <FadeInSection fadeDuration={300} slideDuration={400} distance="5vh">
                         <ProjectCard 
                             title="Survival Analysis of Lung Cancer Data"
                             description="Analysis of a novel dna sequencing dataset to predict lung cancer survival"
-                            imgSrc="/images/project_header/delfi-resize.png"
+                            imgSrc={delfi}
                             technologies={["Python", "Sksurv", "Matplotlib"]}
                             pageLink="#"
                         />
@@ -86,7 +93,7 @@ export default function WorkProjects() {
                         <ProjectCard 
                             title="Online Retail Analysis"
                             description="Modeled the unit price of items based on the quantity of items purchased."
-                            imgSrc="/images/project_header/online_retail.png"
+                            imgSrc={onlineRetail}
                             technologies={["R, ggplot2, dplyr, stanglm"]}
                             pageLink="#"
                         />
@@ -96,14 +103,13 @@ export default function WorkProjects() {
                             <ProjectCard 
                                 title="Bayesian Clinical Heart Failure Detection"
                                 description="Modeled bayesian regression models to predict time till death and logistic regression to predict death event status."
-                                imgSrc="/images/project_header/heart_failure.png"
+                                imgSrc={heartFailure}
                                 technologies={["R, ggplot2, dplyr, stanglm"]}
                                 pageLink="#"
                             />
                         </div>
                     </FadeInSection>
                 </div>
-                
             </div>
         </div>
     </section>

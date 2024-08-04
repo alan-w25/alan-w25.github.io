@@ -6,10 +6,12 @@ import Skills from '@/components/Skills';
 import Work from '@/components/Work';
 import WorkProjects from '@/components/WorkProjects';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
+      <Header currentUnderline="home" />
       <MissionStatement />
       <Currently />
       <Skills />
