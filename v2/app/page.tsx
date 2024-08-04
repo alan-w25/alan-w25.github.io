@@ -5,7 +5,6 @@ import Currently from '@/components/Currently';
 import Skills from '@/components/Skills';
 import Work from '@/components/Work';
 import WorkProjects from '@/components/WorkProjects';
-import Hobbies from  '@/components/Hobbies';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <Skills />
       <Work />
       <WorkProjects />
-      <Hobbies />
       <Footer />
     </main>
   );

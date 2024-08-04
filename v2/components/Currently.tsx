@@ -4,20 +4,20 @@ import Link from 'next/link';
 
 export default function Currently() {
   return (
-    <section id="currently" className="mt-20 container mx-auto w-5/6 items-center flex">
-        <div id="currently-container" className="flex container flex-col w-full">
-          <h1 className="text-secondary text-2xl font-bold text-center" >a little about me</h1>
-          <div id="currently-headshot" className='flex space-x-20 w-full'>
-          <Image 
-            src="/images/headshot.jpg"
-            alt="Headshot"
-            width={300}
-            height={300} 
-            className="rounded-full"
-          />
+    <section id="currently" className="mt-24 container mx-auto w-5/6 flex md:flex-row flex-col">
+        <div id="currently-container" className="flex flex-col md:flex-row container w-full">
+          <div id="currently-headshot" className='w-full'>
+            <Image 
+              src="/images/headshot.jpg"
+              alt="Headshot"
+              width={300}
+              height={300} 
+              className="rounded-full"
+            />
+          </div> 
 
-          <div id="currently-information" className="mr-40">
-            
+          <div id="currently-information" className="mt-8 md:mt-0">
+            <h1 className="text-secondary text-xl md:text-2xl font-semibold" >a little about me</h1>
             <ul className="mt-8 list-disc text-md">
               <li>
                 <p>
@@ -44,10 +44,6 @@ export default function Currently() {
           </div>
           
         </div>
-
-        </div>
-        
-        
       </section>
   )
 }

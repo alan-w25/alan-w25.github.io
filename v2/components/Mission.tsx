@@ -2,16 +2,17 @@ import React from 'react';
 import Image from 'next/image';
 import CustomIcon from './CustomIcon';
 import { faLinkedinIn, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
 
 export default function MissionStatement() {
 
     return (
-        <section id="mission-section" className="mt-20 container mx-auto w-10/12 items-center flex">
-          <div id="mission-container" className="flex w-full container space-x-10">
-            <div id="mission-statement-container" className="flex flex-col w-full container">
-              <div id="mission-words-container" className="flex flex-col w-full container">
+        <section id="mission-section" className="md:mt-36 container mx-auto w-10/12 items-center flex">
+          <div id="mission-container" className="flex md:flex-row flex-col-reverse w-full container md:space-y-0 md:space-x-10">
+            <div id="mission-statement-container" className="flex flex-col w-full">
+              <div id="mission-words-container" className="flex flex-col w-full">
                 <h1 className="text-secondary text-5xl font-bold">Hello, my name is Alan</h1> 
                   <br/>
                   <ul>
@@ -23,22 +24,28 @@ export default function MissionStatement() {
                     </li>
                   </ul>
               </div> 
-              <div id="mission-buttons-container" className="flex flex-row items-center p-4 mt-8 container w-full">
-                  <Link href="/resume.pdf" passhref="true">
+              <div id="mission-buttons-container" className="flex flex-col items-left p-4 mt-8 w-full space-y-4 md:space-y-0 md:flex-row">
+                  <Link href="/docs/Alan_Wu_resume.pdf" passhref="true">
                     <button className="w-48 h-16 border-2 border-black text-black text-xl px-4 py-2 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white">Resume</button>
                   </Link>
                   
 
-                  <a className="ml-20">
-                    <CustomIcon name={faLinkedinIn} color="text-black" scale="2x" />
-                  </a>
-                  <a className="ml-4">
-                    <CustomIcon name={faGithubSquare} color="text-black" scale="2x" />
-                  </a>
+                  <div id="brand-icon-div" className="flex flex-row">
+                    <a href="mailto:alan.lw25@gmail.com" className="md:ml-20">
+                      <CustomIcon name={faEnvelope} color="text-black" scale="2x" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/alanlwu" className="ml-4">
+                      <CustomIcon name={faLinkedinIn} color="text-black" scale="2x" />
+                    </a>
+                    <a className="ml-4">
+                      <CustomIcon name={faGithubSquare} color="text-black" scale="2x" />
+                    </a>
+                  </div>
+                  
               </div>
             </div>
 
-            <div id="mission-img" className="mr-20">
+            <div id="mission-img" className="mb-10 md:mr-20 md:w-1/2 w-full">
               <Image 
                 src="/mission-image.jpg"
                 alt="Mission Image"
