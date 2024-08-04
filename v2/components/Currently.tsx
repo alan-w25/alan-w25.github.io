@@ -55,7 +55,7 @@ export default function Currently() {
               </FadeInSection>
             </ul>
             <FadeInSection fadeDuration={500} slideDuration={500} distance="5vh">
-              <Link href="/about-me" passhref="true">
+              <Link href="/about-me" passHref>
                 <button className="w-48 h-16 border-2 border-black text-black text-xl px-4 py-2 rounded-lg transition-colors duration-300 hover:bg-black mt-16 hover:text-white">Learn more</button>
               </Link>
             </FadeInSection>

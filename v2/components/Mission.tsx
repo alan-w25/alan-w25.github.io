@@ -29,7 +29,7 @@ export default function MissionStatement() {
               </FadeInSection>
               <FadeInSection fadeDuration={300} slideDuration={300} distance="5vh">
               <div id="mission-buttons-container" className="flex flex-col items-left p-4 mt-8 w-full space-y-4 md:space-y-0 md:flex-row" >
-                  <Link href="/docs/Alan_Wu_resume.pdf" passhref="true">
+                  <Link href="/docs/Alan_Wu_resume.pdf" passHref>
                     <button className="w-48 h-16 border-2 border-black text-black text-xl px-4 py-2 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white">Resume</button>
                   </Link>
                   
