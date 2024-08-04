@@ -7,7 +7,7 @@ export default function Work() {
     <section id="Work" className="container mx-auto flex justify-center mt-24 w-5/6">
         <div id="work-container" className="flex flex-col items-center">
             <FadeInSection fadeDuration={300} slideDuration={400} distance="0">
-                <h1 className="text-secondary font-semibold text-center text-xl md:text-2xl">where I've worked in the past</h1>
+                <h1 className="text-secondary font-semibold text-center text-xl md:text-2xl">where I&apos;ve worked in the past</h1>
             </FadeInSection>
             
             <div id="past-work-images" className="flex md:flex-row md:flex-nowrap flex-wrap space-y-4 md:mt-20 md:space-y-0 md:space-x-4">
