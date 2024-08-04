@@ -1,0 +1,11 @@
+{
+    "rewrites":[
+        {
+            "source":"/v1/", 
+            "destination":"https://alan-w25-github-io.vercel.app/"
+        }, 
+        {"source": "/v1/:match*", 
+        "destination": "https://alan-w25-github-io.vercel.app/:match*"
+    }
+    ]
+}
