@@ -9,7 +9,7 @@ export default function DataPage() {
         <p className="mt-8 text-md text-black">
           I love data and I think it&apos;s going to be the future. Whether it is exploring insights from large scale data, or model building to solve a prediction task, I 
           love to solve problems with unique data across diverse industries. Currently, I am 
-          working on projects that incorporate large scale data analysis. In the past, I&apos;ve explored what it's like to work with different types of data in class projects and research.  <br /><br />
+          working on projects that incorporate large scale data analysis. In the past, I&apos;ve explored what it&apos;s like to work with different types of data in class projects and research.  <br /><br />
 
           Please check out some of my data projects below!
         </p>
