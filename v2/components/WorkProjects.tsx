@@ -2,6 +2,7 @@ import React from 'react'
 import ProjectCard from './ProjectCard';
 import Link from 'next/link';
 import FadeInSection from './FadeInSection';
+
 import kitchenPantry from '../public/images/project_header/pantry-tracker.png';
 import chineseMnist from '../public/images/project_header/chinese-mnist-crop.png';
 import onlineRetail from '../public/images/project_header/online_retail.png';
