@@ -20,7 +20,9 @@ export default function DataPage() {
         </p>
       </div>
       <div className="w-full mt-24 flex items-center mx-auto container justify-center">
-        <PageGrid projects = {dataProjects}/>
+        <PageGrid projects={dataProjects}
+        containerStyles="md:grid-cols-3 justify-between"
+        />
       </div>
       <PageFooter />
     </main>

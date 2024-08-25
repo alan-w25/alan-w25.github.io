@@ -13,11 +13,12 @@ interface Project {
   
 interface ProjectProps {
     projects: Project[]; // Array of Project objects
+    containerStyles?: string;
 }
 
-export default function PageGrid({projects}:ProjectProps) {
+export default function PageGrid({projects, containerStyles}:ProjectProps) {
   return (
-    <div className="grid md:grid-cols-3 grid-cols-1 justify-between gap-x-10 gap-y-24 container w-full mx-auto">
+    <div className={`grid grid-cols-1 ${containerStyles} gap-x-10 gap-y-24 container w-full mx-auto`}>
       {projects.map((project, index) => (
         <FadeInSection 
             key={index} 

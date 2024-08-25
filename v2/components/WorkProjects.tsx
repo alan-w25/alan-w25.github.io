@@ -48,6 +48,7 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
                 <div id="coding-projects-card" className="flex flex-row space-x-10 justify-center mt-8">
                     <PageGrid 
                         projects = {codeToDisplay}
+                        containerStyles="md:grid-cols-2"
                     />
                 </div>
             </div>
@@ -71,7 +72,8 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
                     </div>
                 </FadeInSection>
                 <div id="data-projects-card" className="flex items-center justify-center flex-row space-x-10 mt-8">
-                    <PageGrid projects = {dataToDisplay} />
+                    <PageGrid projects = {dataToDisplay}
+                     containerStyles="md:grid-cols-3"/>
                 </div>
             </div>
         </div>
