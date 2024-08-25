@@ -1,12 +1,11 @@
 "use client"
-import React, {useState, useEffect} from 'react'; 
+import React from 'react'; 
 import Image from 'next/image';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Carousel from 'react-multi-carousel';
 import Link from 'next/link';
 import "react-multi-carousel/lib/styles.css";
-import {Book} from '../app/page';
-
+import {Book} from '../app/books/page';
+import FadeInSection from './FadeInSection';
 
 const responsive = {
   superLargeDesktop: {
@@ -57,6 +56,7 @@ const BookCarousel: React.FC<BookCarouselProps> = ({books}) => {
 
       </div>
     </section>
+      <FadeInSection fadeDuration={300} slideDuration={400} >
         <div className="mt-16 w-full items-center">
           <Carousel 
             swipeable={false}
@@ -78,7 +78,8 @@ const BookCarousel: React.FC<BookCarouselProps> = ({books}) => {
             ))}
           
           </Carousel> 
-      </div>
+        </div>
+      </FadeInSection>
    </div>
     
   )
