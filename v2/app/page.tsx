@@ -13,8 +13,8 @@ import BookCarousel from '@/components/BookCarousel';
 // static image urls 
 
 
-import { dataProjects } from '../app/data/page';
-import {codeProjects} from '../app/code/page';
+import { dataProjects } from '../app/data/dataProjectsData';
+import {codeProjects} from '../app/code/codeProjectsData';
 import {booksList} from '../app/books/bookData';
 
 

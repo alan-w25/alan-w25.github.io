@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import Link from 'next/link';
 import "react-multi-carousel/lib/styles.css";
-import {Book} from '../app/books/page';
+import {Book} from '../app/books/bookData';
 import FadeInSection from './FadeInSection';
 
 const responsive = {
