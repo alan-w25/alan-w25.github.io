@@ -18,7 +18,7 @@ export interface Book {
   title: string;
 }
 
-export const books: Book[] = [
+export const booksList: Book[] = [
   {
     imageSrc: norwegianWood, 
     link: "#",
@@ -49,9 +49,9 @@ export const books: Book[] = [
     link: "#",
     title: "Dance Dance Dance"
   }
-]
+];
 
-export default function BooksPage() {
+export default function books() {
   return (
     <main>
       <Header currentUnderline='books' />
@@ -70,6 +70,5 @@ export default function BooksPage() {
       </div>
       <Footer />
     </main>
-    
   )
 }

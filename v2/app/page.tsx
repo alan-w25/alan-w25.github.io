@@ -15,7 +15,7 @@ import BookCarousel from '@/components/BookCarousel';
 
 import { dataProjects } from '../app/data/page';
 import {codeProjects} from '../app/code/page';
-import {books} from '../app/books/page';
+import {booksList} from '../app/books/page';
 
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
       <Currently />
       <Skills />
       <WorkProjects codeProjects={codeProjects} dataProjects={dataProjects}/>
-      <BookCarousel books={books} />
+      <BookCarousel books={booksList} />
       <Footer />
     </main>
   );
