@@ -9,9 +9,16 @@ import onlineRetail from '../public/images/project_header/online_retail.png';
 import heartFailure from '../public/images/project_header/heart_failure.png';
 import delfi from '../public/images/project_header/delfi-resize.png';
 
+import { ProjectCardProps } from './ProjectCard';
+
+interface workProjectProps {
+    // props go here 
+    codeProjects: ProjectCardProps[];
+    dataProjects: ProjectCardProps[];
+}
 
 
-export default function WorkProjects() {
+export default function WorkProjects({codeProjects, dataProjects} :workProjectProps) {
   return (
     <section id="work-projects" className="w-5/6 container mx-auto flex mt-24 justify-center">
         <div id="work-projects-container" className="container w-full flex flex-col items-center">
@@ -39,27 +46,19 @@ export default function WorkProjects() {
                 </FadeInSection>
                 
                 <div id="coding-projects-card" className="flex flex-row space-x-10 justify-center mt-4">
-                    <FadeInSection fadeDuration={300} slideDuration={400} distance="5vh">
-                        <ProjectCard 
-                            title="Kitchen Pantry App"
-                            description="A web app that helps users keep track of their pantry items"
-                            imgSrc={kitchenPantry}
-                            technologies={["Next.js, MaterialUI, Firebase"]}
-                            pageLink="/code/kitchen-pantry"
-                        />
-                    </FadeInSection>
-                    
-                    <FadeInSection fadeDuration={350} slideDuration={450} distance="5vh">
-                        <ProjectCard 
-                            title="Chinese MNIST Teacher"
-                            description="A web app that teaches you how to read, write, and pronounce Chinese digits"
-                            imgSrc={chineseMnist}
-                            technologies={["Next.js, TailwindCSS, FastAPI, Pytorch"]}
-                            pageLink="/code/chinese-mnist"
-                        />
-                    </FadeInSection>
+                    {
+                        codeProjects.map((project:ProjectCardProps, index) => (
+                            <ProjectCard 
+                                key={index}
+                                title={project.title}
+                                description={project.description}
+                                imgSrc={project.imgSrc}
+                                technologies={project.technologies}
+                                pageLink={project.pageLink}
+                            />
+                        ))
+                    }
                 </div>
-                
             </div>
             <div id="data-projects-home-container" className="w-full mx-auto flex flex-col mt-24">
                 <FadeInSection fadeDuration={300} slideDuration={300} distance="5vh">
@@ -81,35 +80,18 @@ export default function WorkProjects() {
                     </div>
                 </FadeInSection>
                 <div id="data-projects-card" className="flex items-center justify-center flex-row space-x-10 mt-10">
-                    <FadeInSection fadeDuration={300} slideDuration={400} distance="5vh">
-                        <ProjectCard 
-                            title="Survival Analysis of Lung Cancer Data"
-                            description="Analysis of a novel dna sequencing dataset to predict lung cancer survival"
-                            imgSrc={delfi}
-                            technologies={["Python", "Sksurv", "Matplotlib"]}
-                            pageLink="#"
-                        />
-                    </FadeInSection>
-                    <FadeInSection fadeDuration={350} slideDuration={450} distance="5vh">
-                        <ProjectCard 
-                            title="Online Retail Analysis"
-                            description="Modeled the unit price of items based on the quantity of items purchased."
-                            imgSrc={onlineRetail}
-                            technologies={["R, ggplot2, dplyr, stanglm"]}
-                            pageLink="#"
-                        />
-                    </FadeInSection>
-                    <FadeInSection fadeDuration={400} slideDuration={500} distance="5vh">
-                        <div className="hidden md:block">
+                    {
+                        dataProjects.map((project:ProjectCardProps, index) => (
                             <ProjectCard 
-                                title="Bayesian Clinical Heart Failure Detection"
-                                description="Modeled bayesian regression models to predict time till death and logistic regression to predict death event status."
-                                imgSrc={heartFailure}
-                                technologies={["R, ggplot2, dplyr, stanglm"]}
-                                pageLink="#"
+                                key={index}
+                                title={project.title}
+                                description={project.description}
+                                imgSrc={project.imgSrc}
+                                technologies={project.technologies}
+                                pageLink={project.pageLink}
                             />
-                        </div>
-                    </FadeInSection>
+                        ))
+                    }
                 </div>
             </div>
         </div>

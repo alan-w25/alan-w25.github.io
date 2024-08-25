@@ -2,8 +2,10 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import FadeInSection from '@/components/FadeInSection';
 
-interface ProjectCardProps {
+
+export interface ProjectCardProps {
     imgSrc: StaticImport | string; 
     title: string; 
     technologies: string[]; 
@@ -15,7 +17,8 @@ interface ProjectCardProps {
 
 export default function ProjectCard({imgSrc, title, technologies, description, pageLink, centered}:ProjectCardProps) {
   return (
-    <div>
+    <FadeInSection fadeDuration={300} slideDuration={400} distance="5vh">
+      <div>
         <Image 
             src= {imgSrc}
             alt={title}
@@ -28,6 +31,8 @@ export default function ProjectCard({imgSrc, title, technologies, description, p
           <Link className="font-extralight text-xs md:text-sm underline" href={pageLink}>Read More</Link>
 
         </div>
-    </div>
+     </div>
+    </FadeInSection>
+    
   )
 }
