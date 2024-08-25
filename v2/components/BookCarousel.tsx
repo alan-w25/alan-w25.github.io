@@ -70,7 +70,7 @@ const BookCarousel: React.FC<BookCarouselProps> = ({books}) => {
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px">
             {books.map((book: Book, index) => (
-              <div key={index} className="md:w-3/4 flex justify-center">
+              <div key={index} className="w-5/6 md:w-3/4 flex justify-center">
                   <Link href={book.link}>
                     <Image src={book.imageSrc} alt={book.title} className="rounded-lg object-fit"/>
                   </Link>

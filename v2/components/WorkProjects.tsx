@@ -3,11 +3,7 @@ import ProjectCard from './ProjectCard';
 import Link from 'next/link';
 import FadeInSection from './FadeInSection';
 
-import kitchenPantry from '../public/images/project_header/pantry-tracker.png';
-import chineseMnist from '../public/images/project_header/chinese-mnist-crop.png';
-import onlineRetail from '../public/images/project_header/online_retail.png';
-import heartFailure from '../public/images/project_header/heart_failure.png';
-import delfi from '../public/images/project_header/delfi-resize.png';
+import PageGrid from './PageGrid';
 
 import { ProjectCardProps } from './ProjectCard';
 
@@ -19,6 +15,10 @@ interface workProjectProps {
 
 
 export default function WorkProjects({codeProjects, dataProjects} :workProjectProps) {
+    const codeToDisplay = codeProjects.slice(0,2);
+    const dataToDisplay = dataProjects.slice(0,3);
+
+
   return (
     <section id="work-projects" className="w-5/6 container mx-auto flex mt-24 justify-center">
         <div id="work-projects-container" className="container w-full flex flex-col items-center">
@@ -45,19 +45,10 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
                     </div>
                 </FadeInSection>
                 
-                <div id="coding-projects-card" className="flex flex-row space-x-10 justify-center mt-4">
-                    {
-                        codeProjects.slice(0,2).map((project:ProjectCardProps, index) => (
-                            <ProjectCard 
-                                key={index}
-                                title={project.title}
-                                description={project.description}
-                                imgSrc={project.imgSrc}
-                                technologies={project.technologies}
-                                pageLink={project.pageLink}
-                            />
-                        ))
-                    }
+                <div id="coding-projects-card" className="flex flex-row space-x-10 justify-center mt-8">
+                    <PageGrid 
+                        projects = {codeToDisplay}
+                    />
                 </div>
             </div>
             <div id="data-projects-home-container" className="w-full mx-auto flex flex-col mt-24">
@@ -79,19 +70,8 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
                         </Link>
                     </div>
                 </FadeInSection>
-                <div id="data-projects-card" className="flex items-center justify-center flex-row space-x-10 mt-10">
-                    {
-                        dataProjects.slice(0,3).map((project:ProjectCardProps, index) => (
-                            <ProjectCard 
-                                key={index}
-                                title={project.title}
-                                description={project.description}
-                                imgSrc={project.imgSrc}
-                                technologies={project.technologies}
-                                pageLink={project.pageLink}
-                            />
-                        ))
-                    }
+                <div id="data-projects-card" className="flex items-center justify-center flex-row space-x-10 mt-8">
+                    <PageGrid projects = {dataToDisplay} />
                 </div>
             </div>
         </div>
