@@ -17,7 +17,7 @@ interface ProjectProps {
 
 export default function PageGrid({projects}:ProjectProps) {
   return (
-    <div className="grid md:grid-cols-3 grid-cols-1 gap-x-10 gap-y-24 container w-full mx-auto">
+    <div className="grid md:grid-cols-3 grid-cols-1 justify-between gap-x-10 gap-y-24 container w-full mx-auto">
       {projects.map((project, index) => (
         <FadeInSection 
             key={index} 

@@ -47,7 +47,7 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
                 
                 <div id="coding-projects-card" className="flex flex-row space-x-10 justify-center mt-4">
                     {
-                        codeProjects.map((project:ProjectCardProps, index) => (
+                        codeProjects.slice(0,2).map((project:ProjectCardProps, index) => (
                             <ProjectCard 
                                 key={index}
                                 title={project.title}
@@ -81,7 +81,7 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
                 </FadeInSection>
                 <div id="data-projects-card" className="flex items-center justify-center flex-row space-x-10 mt-10">
                     {
-                        dataProjects.map((project:ProjectCardProps, index) => (
+                        dataProjects.slice(0,3).map((project:ProjectCardProps, index) => (
                             <ProjectCard 
                                 key={index}
                                 title={project.title}

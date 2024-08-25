@@ -1,5 +1,39 @@
 import React from 'react'
 import Header from '@/components/Header'
+import PageFooter from '@/components/PageFooter'
+import {ProjectCardProps} from '@/components/ProjectCard';
+import PageGrid from '@/components/PageGrid';
+
+//images 
+
+import onlineRetail from '../../public/images/project_header/online_retail.png';
+import heartFailure from '../../public/images/project_header/heart_failure.png';
+import delfi from '../../public/images/project_header/delfi-resize.png';
+
+export const dataProjects: ProjectCardProps[] = [
+  {
+    title:"Survival Analysis of Lung Cancer Data",
+    description:"Analysis of a novel dna sequencing dataset to predict lung cancer survival",
+    imgSrc:delfi,
+    technologies:["Python", "Sksurv", "Matplotlib"],
+    pageLink:"#"
+  }, 
+  {
+    title:"Online Retail Analysis",
+    description:"Modeled the unit price of items based on the quantity of items purchased.",
+    imgSrc:onlineRetail,
+    technologies:["R, ggplot2, dplyr, stanglm"],
+    pageLink:"#"
+  }, 
+  {
+    title:"Bayesian Clinical Heart Failure Detection",
+    description:"Modeled bayesian regression models to predict time till death and logistic regression to predict death event status.",
+    imgSrc:heartFailure,
+    technologies:["R, ggplot2, dplyr, stanglm"],
+    pageLink:"#"
+  }
+]
+
 export default function DataPage() {
   return (
     <main>
@@ -13,8 +47,11 @@ export default function DataPage() {
 
           Please check out some of my data projects below!
         </p>
-        <p className="mt-20">Coming soon!</p>
       </div>
+      <div className="w-full mt-24 flex items-center mx-auto container justify-center">
+        <PageGrid projects = {dataProjects}/>
+      </div>
+      <PageFooter />
     </main>
   )
 }
