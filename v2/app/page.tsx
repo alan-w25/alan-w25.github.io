@@ -15,7 +15,7 @@ import BookCarousel from '@/components/BookCarousel';
 
 import { dataProjects } from '../app/data/page';
 import {codeProjects} from '../app/code/page';
-import {booksList} from '../app/books/page';
+import {booksList} from '../app/books/bookData';
 
 
 export default function Home() {
