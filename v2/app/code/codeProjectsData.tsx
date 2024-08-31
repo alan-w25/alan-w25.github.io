@@ -9,7 +9,7 @@ export const codeProjects: ProjectCardProps[] = [
       description:"A mobile app that leverages AI to customize mandarin learning", 
       imgSrc:langtrain, 
       technologies:["React Native, Firebase, OpenAI API"],
-      pageLink:"/code"
+      pageLink:"/code/langtrain"
     },
     {
       title:"Kitchen Pantry App",

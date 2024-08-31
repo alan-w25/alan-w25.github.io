@@ -14,9 +14,10 @@ interface Project {
 interface ProjectProps {
     projects: Project[]; // Array of Project objects
     containerStyles?: string;
+    centered: boolean;
 }
 
-export default function PageGrid({projects, containerStyles}:ProjectProps) {
+export default function PageGrid({projects, containerStyles, centered}:ProjectProps) {
   return (
     <div className={`grid grid-cols-1 ${containerStyles} gap-x-10 gap-y-24 container w-full mx-auto`}>
       {projects.map((project, index) => (
@@ -32,8 +33,8 @@ export default function PageGrid({projects, containerStyles}:ProjectProps) {
                 description={project.description}
                 title={project.title}
                 technologies={project.technologies}
-                pageLink='#'
-                centered
+                pageLink={project.pageLink}
+                centered = {centered}
             />
         </FadeInSection>
       ))}

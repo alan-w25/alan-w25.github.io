@@ -38,7 +38,7 @@ const BookCarousel: React.FC<BookCarouselProps> = ({books}) => {
     <div>
     <section id="books-section" className="mt-24 container flex flex-col w-5/6 mx-auto">
       <div id="books-header" className="flex flex-row justify-between">
-        <h1 className="text-2xl text-secondary">Books</h1>
+        <h1 className="text-2xl text-secondary">Currently Reading</h1>
         <Link href="/books">
           <button className="w-36 
           h-12 border-2 
@@ -69,14 +69,13 @@ const BookCarousel: React.FC<BookCarouselProps> = ({books}) => {
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px">
-            {books.map((book: Book, index) => (
+            {books.slice(0,4).map((book: Book, index) => (
               <div key={index} className="w-5/6 md:w-3/4 flex justify-center">
                   <Link href={book.link}>
                     <Image src={book.imageSrc} alt={book.title} className="rounded-lg object-fit"/>
                   </Link>
                 </div>
             ))}
-          
           </Carousel> 
         </div>
       </FadeInSection>

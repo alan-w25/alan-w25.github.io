@@ -1,3 +1,4 @@
+"use client";
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header";
@@ -6,6 +7,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import {Poppins} from 'next/font/google';
 import Script from 'next/script';
+import { ProjectProvider } from "@/hooks/ProjectContext";
 
 config.autoAddCss = false;
 
@@ -48,7 +50,9 @@ export default function RootLayout({
 
       </head>
       <body className={`bg-white ${poppins.className}`}>
+        <ProjectProvider>
         {children}
+        </ProjectProvider>
       </body>
     </html>
   );

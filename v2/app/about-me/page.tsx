@@ -16,7 +16,7 @@ export default function AboutPage() {
       <Header currentUnderline='aboutme' />
       <div className="flex w-full flex-col md:flex-row container md:w-5/6 mx-auto md:mt-20 mt-4 flex-1 items-center">
         <div id="about-image-container" className="w-5/6 md:w-2/6">
-          <FadeInSection fadeDuration={300} slideDuration={300} distance="5vh">
+          <FadeInSection fadeDuration={250} slideDuration={250} distance="5vh">
             <Image 
             src= {AboutMe}
             alt="Alan Wu"
@@ -31,7 +31,7 @@ export default function AboutPage() {
           </FadeInSection>
           <FadeInSection fadeDuration={300} slideDuration={300} distance="5vh">
             <p className="mt-10 mx-4 md:mx-0 text-black text-sm">
-              Hello! I&apos;m Alan and I am a wannabe software engineering making his way to break into the tech industry. I&apos;m a NJ native and a recent graduate from 
+              Hello! I&apos;m Alan and I am a wannabe software engineer making his way to break into the tech industry. I&apos;m a NJ native and a recent graduate from 
               Rutgers University with a B.S. in Computer Science 
             </p>
             </FadeInSection>
