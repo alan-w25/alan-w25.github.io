@@ -50,6 +50,7 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
                         projects = {codeToDisplay}
                         containerStyles="md:grid-cols-2"
                         centered={false}
+                        book={false}
                     />
                 </div>
             </div>
@@ -75,7 +76,8 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
                 <div id="data-projects-card" className="flex items-center justify-center flex-row space-x-10 mt-8">
                     <PageGrid projects = {dataToDisplay}
                     centered={false}
-                     containerStyles="md:grid-cols-3"/>
+                    book={false}
+                    containerStyles="md:grid-cols-3"/>
                 </div>
             </div>
         </div>
