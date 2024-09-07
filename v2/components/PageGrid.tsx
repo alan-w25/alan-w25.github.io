@@ -2,22 +2,16 @@
 import React from 'react'
 import ProjectCard from './ProjectCard';
 import FadeInSection from './FadeInSection';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-
-interface Project {
-    imgSrc: StaticImport | string; // URL or path to the image
-    description: string; // A short description of the project
-    title: string; // Title of the project
-    technologies: string[]; // Array of technologies used
-  }
+import { ProjectCardProps } from './ProjectCard';
   
 interface ProjectProps {
-    projects: Project[]; // Array of Project objects
+    projects: ProjectCardProps[]; // Array of Project objects
     containerStyles?: string;
     centered: boolean;
+    book: boolean;
 }
 
-export default function PageGrid({projects, containerStyles, centered}:ProjectProps) {
+export default function PageGrid({projects, containerStyles, centered, book}:ProjectProps) {
   return (
     <div className={`grid grid-cols-1 ${containerStyles} gap-x-10 gap-y-24 container w-full mx-auto`}>
       {projects.map((project, index) => (
@@ -34,7 +28,8 @@ export default function PageGrid({projects, containerStyles, centered}:ProjectPr
                 title={project.title}
                 technologies={project.technologies}
                 pageLink={project.pageLink}
-                centered = {centered}
+                centered={centered}
+                book={book}
             />
         </FadeInSection>
       ))}

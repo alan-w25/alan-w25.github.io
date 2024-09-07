@@ -24,7 +24,8 @@ export default function CodePage() {
       <div className="w-full mt-24 flex items-center mx-auto container justify-center">
         <PageGrid projects = {codeProjects}
         containerStyles="md:grid-cols-3 justify-between"
-        centered={true}/>
+        centered={true}
+        book={false}/>
 
       </div>
       

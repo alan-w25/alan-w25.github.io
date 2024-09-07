@@ -2,6 +2,7 @@ import React, {createContext, useContext, ReactNode} from 'react';
 import { ProjectCardProps } from '@/components/ProjectCard';
 import { codeProjects } from '@/app/code/codeProjectsData';
 import { dataProjects } from '@/app/data/dataProjectsData';
+import {booksList} from '@/app/books/bookData';
 
 interface ProjectContextProps {
     getProjects: (type:string) => ProjectCardProps[]; 
@@ -15,6 +16,8 @@ const ProjectProvider = ({children}: {children:ReactNode}) =>{
             return codeProjects
         } else if (type === 'data') {
             return dataProjects;
+        } else if (type === 'book'){
+            return booksList;
         }
         return [];
     }

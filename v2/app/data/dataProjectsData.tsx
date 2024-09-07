@@ -10,20 +10,20 @@ export const dataProjects: ProjectCardProps[] = [
     description:"Analysis of a novel dna sequencing dataset to predict lung cancer survival",
     imgSrc:delfi,
     technologies:["Python", "Sksurv", "Matplotlib"],
-    pageLink:"#"
+    pageLink:"/data/delfi"
   }, 
   {
     title:"Online Retail Analysis",
     description:"Modeled the unit price of items based on the quantity of items purchased.",
     imgSrc:onlineRetail,
     technologies:["R, ggplot2, dplyr, stanglm"],
-    pageLink:"#"
+    pageLink:"/data/online-retail"
   }, 
   {
-    title:"Bayesian Clinical Heart Failure Detection",
+    title:"Bayesian Heart Failure Detection",
     description:"Modeled bayesian regression models to predict time till death and logistic regression to predict death event status.",
     imgSrc:heartFailure,
     technologies:["R, ggplot2, dplyr, stanglm"],
-    pageLink:"#"
+    pageLink:"/data/bayesian-heart-failure"
   }
 ]

@@ -4,11 +4,9 @@ import ProjectsLayout from '@/components/ProjectsLayout';
 export default function page() {
   return (
     <ProjectsLayout projectName="Kitchen Pantry App" type="code">
-        <div>
-            hIS
+        <div className="mt-8 w-full text-xl items-center flex mx-auto container">
+            Coming soon!
         </div>
-
-
    </ProjectsLayout>
   )
 }

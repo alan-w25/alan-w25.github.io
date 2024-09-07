@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import Link from 'next/link';
 import "react-multi-carousel/lib/styles.css";
-import {Book} from '../app/books/bookData';
+import { ProjectCardProps } from './ProjectCard';
 import FadeInSection from './FadeInSection';
 
 const responsive = {
@@ -29,7 +29,7 @@ const responsive = {
 
 
 interface BookCarouselProps {
-  books: Book[]; 
+  books: ProjectCardProps[]; 
 }
 
 const BookCarousel: React.FC<BookCarouselProps> = ({books}) => {
@@ -69,10 +69,10 @@ const BookCarousel: React.FC<BookCarouselProps> = ({books}) => {
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px">
-            {books.slice(0,4).map((book: Book, index) => (
+            {books.slice(0,4).map((book: ProjectCardProps, index) => (
               <div key={index} className="w-5/6 md:w-3/4 flex justify-center">
-                  <Link href={book.link}>
-                    <Image src={book.imageSrc} alt={book.title} className="rounded-lg object-fit"/>
+                  <Link href={book.pageLink}>
+                    <Image src={book.imgSrc} alt={book.title} className="rounded-lg object-fit hover:scale-110 transition"/>
                   </Link>
                 </div>
             ))}

@@ -21,6 +21,10 @@ export default function page() {
                     <br /> 
 
                     The project can be accessed by following the <Link className="hover:underline text-blue-500" href="https://github.com/LangTrain/LangTrain-App">github repository link</Link>
+
+                    <br /> 
+                    <br /> 
+                    More coming soon!
                 </p>
             </div>
            

@@ -23,6 +23,7 @@ export default function DataPage() {
         <PageGrid projects={dataProjects}
         containerStyles="md:grid-cols-3 justify-between"
         centered={true}
+        book={false}
         />
       </div>
       <PageFooter />

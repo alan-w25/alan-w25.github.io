@@ -8,62 +8,69 @@ import nvc from '../../public/images/books/non_violent_communication.jpg'
 import dailyStoic from '../../public/images/books/daily_stoic.jpg';
 import hillbillyElegy from '../../public/images/books/hillbilly_elegy.jpg';
 import htwf from "../../public/images/books/how_to_win_friends.jpg";
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-export interface Book {
-  imageSrc: StaticImport;
-  link: string;
-  title: string;
-}
+import {ProjectCardProps} from '@/components/ProjectCard';
 
-export const booksList: Book[] = [
+
+export const booksList: ProjectCardProps[] = [
   {
-    imageSrc: htwf, 
-    link: "#",
+    imgSrc: htwf, 
+    pageLink: "/books/htwf",
     title: "How to Win Friends and Influence People",
+    book: true
+
   },
   {
-    imageSrc: hillbillyElegy, 
-    link: "#",
+    imgSrc: hillbillyElegy, 
+    pageLink: "/books/hillbilly-elegy",
     title: "Hillbilly Elegy",
+    book: true
   },
   {
-    imageSrc: dailyStoic, 
-    link: "#",
+    imgSrc: dailyStoic, 
+    pageLink: "/books/daily-stoic",
     title: "Daily Stoic",
+    book: true
   },
   {
-    imageSrc: nvc, 
-    link: "#",
+    imgSrc: nvc, 
+    pageLink: "/books/nvc",
     title: "Non-Violent Communication",
+    book: true
   },
   {
-    imageSrc: norwegianWood,
-    link: "#",
-    title: "Norwegian Woood",
+    imgSrc: norwegianWood,
+    pageLink: "/books/norwegian-wood",
+    title: "Norwegian Wood",
+    book: true
   },
   {
-    imageSrc: deepWork,
-    link: "#",
+    imgSrc: deepWork,
+    pageLink: "/books/deep-work",
     title: "Deep Work",
+    book: true
   },
   {
-    imageSrc: cryingHmart,
-    link: "#",
-    title: "Crying in Hmart",
+    imgSrc: cryingHmart,
+    pageLink: "/books/crying-in-hmart",
+    title: "Crying In H-Mart",
+    book: true
   },
   {
-    imageSrc: neverSplitDifference,
-    link: "#",
+    imgSrc: neverSplitDifference,
+    pageLink: "/books/never-split-the-difference",
     title: "Never Split the Difference",
+    book: true
   },
   {
-    imageSrc: dune,
-    link: "#",
+    imgSrc: dune,
+    pageLink: "/books/dune",
     title: "Dune",
+    book: true
   },
   {
-    imageSrc: dance,
-    link: "#",
+    imgSrc: dance,
+    pageLink: "/books/dance-dance-dance",
     title: "Dance Dance Dance",
+    book: true
   },
 ];
