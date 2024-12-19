@@ -26,7 +26,6 @@ export default function Home() {
       <Currently />
       <Skills />
       <WorkProjects codeProjects={codeProjects} dataProjects={dataProjects}/>
-      <BookCarousel books={booksList} />
       <Footer />
     </main>
   );

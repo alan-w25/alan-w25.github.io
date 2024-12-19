@@ -50,7 +50,7 @@ const Header = ({currentUnderline}: HeaderProps) => {
                     <li><Link href="/" className={` ${currentUnderline==='home' ? 'underline' : ''} hover:underline"`}>Home</Link></li>
                     <li><Link href="/code" className={` ${currentUnderline==='code' ? 'underline' : ''} hover:underline"`}>Code</Link></li>
                     <li><Link href="/data" className={` ${currentUnderline==='data' ? 'underline' : ''} hover:underline"`}>Data</Link></li>
-                    <li><Link href="/books" className={` ${currentUnderline==='books' ? 'underline' : ''} hover:underline"`}>Books</Link></li>
+                    {/*<li><Link href="/books" className={` ${currentUnderline==='books' ? 'underline' : ''} hover:underline"`}>Books</Link></li>*/}
                     <li><Link href="/about-me" className={` ${currentUnderline==='aboutme' ? 'underline' : ''} hover:underline"`}>About Me</Link></li>
                 </ul>
             </nav>

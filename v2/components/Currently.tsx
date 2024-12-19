@@ -33,7 +33,7 @@ export default function Currently() {
               <FadeInSection fadeDuration={500} slideDuration={500} distance="0">
                 <li>
                   <p>
-                    currently studying at the University of Pennsylvania, pursuing my M.S.E in <span> </span> 
+                    currently studying at the University of Pennsylvania, pursuing a master's degree in <span> </span> 
                     <Link className="text-secondary hover:underline" href="https://dats.seas.upenn.edu/">Data Science</Link>
                   </p>
                 </li>  
@@ -41,8 +41,7 @@ export default function Currently() {
               <FadeInSection fadeDuration={500} slideDuration={500} distance="0">
                 <li className="mt-8">
                   <p>
-                    a Research Assistant at the <Link href="https://ai-analytics.wharton.upenn.edu/">Wharton Business School</Link>, researching multi-modal data applications in marketing under professors <span> </span> 
-                    <Link className="text-secondary hover:underline" href="https://marketing.wharton.upenn.edu/profile/riyengar/">Raghu Iyengar</Link> and <span> </span><Link className="text-secondary hover:underline" href="https://marketing.wharton.upenn.edu/profile/ebradlow/">Eric Bradlow</Link>
+                    a Research Assistant at the <Link className="text-secondary hover:underline" href="https://ai-analytics.wharton.upenn.edu/">Wharton School of Business</Link>, working on analytics project with Wharton partners such as Penn Sports Analytics and Wharton Analytics Fellows.
                   </p>
                 </li>
               </FadeInSection>
