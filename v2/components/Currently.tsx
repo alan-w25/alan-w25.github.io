@@ -33,7 +33,7 @@ export default function Currently() {
               <FadeInSection fadeDuration={500} slideDuration={500} distance="0">
                 <li>
                   <p>
-                    currently studying at the University of Pennsylvania, pursuing a master's degree in <span> </span> 
+                    currently studying at the University of Pennsylvania, pursuing a master&apos;s degree in <span> </span> 
                     <Link className="text-secondary hover:underline" href="https://dats.seas.upenn.edu/">Data Science</Link>
                   </p>
                 </li>  
