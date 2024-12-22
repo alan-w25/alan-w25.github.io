@@ -41,7 +41,7 @@ export default function MissionStatement() {
                     <a target="_blank" href="https://www.linkedin.com/in/alanlwu" className="ml-4">
                       <CustomIcon name={faLinkedinIn} color="text-black" scale="2x" />
                     </a>
-                    <a target="_blank" className="ml-4">
+                    <a target="_blank" href="https://www.github.com/alan-w25" className="ml-4">
                       <CustomIcon name={faGithubSquare} color="text-black" scale="2x" />
                     </a>
                   </div>
@@ -50,7 +50,7 @@ export default function MissionStatement() {
             </div>
            
 
-            <div id="mission-img" className="mb-10 md:mr-20 md:w-1/2 w-full">
+            {/*<div id="mission-img" className="mb-10 md:mr-20 md:w-1/2 w-full">
               <FadeInSection
                 fadeDuration={300}
                 slideDuration={400}
@@ -64,7 +64,7 @@ export default function MissionStatement() {
                 height={800}
                 />
               </FadeInSection>
-            </div>
+            </div>*/}
           </div>
       </section>
     )

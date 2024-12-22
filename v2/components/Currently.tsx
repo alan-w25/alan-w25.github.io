@@ -27,13 +27,13 @@ export default function Currently() {
 
           <div id="currently-information" className="mt-8 md:mt-0">
             <FadeInSection fadeDuration={300} slideDuration={400} distance="5vh">
-              <h1 className="text-secondary text-xl md:text-2xl font-semibold" >a little about me</h1>
+              <h1 className="text-secondary text-xl md:text-2xl font-semibold" >A Little About Me</h1>
             </FadeInSection>
             <ul className="mt-8 list-disc text-md">
               <FadeInSection fadeDuration={500} slideDuration={500} distance="0">
                 <li>
                   <p>
-                    currently studying at the University of Pennsylvania, pursuing a master&apos;s degree in <span> </span> 
+                    Currently studying at the University of Pennsylvania, pursuing a master&apos;s degree in <span> </span> 
                     <Link className="text-secondary hover:underline" href="https://dats.seas.upenn.edu/">Data Science</Link>
                   </p>
                 </li>  
@@ -41,16 +41,17 @@ export default function Currently() {
               <FadeInSection fadeDuration={500} slideDuration={500} distance="0">
                 <li className="mt-8">
                   <p>
-                    a Research Assistant at the <Link className="text-secondary hover:underline" href="https://ai-analytics.wharton.upenn.edu/">Wharton School of Business</Link>, working on analytics project with Wharton partners such as Penn Sports Analytics and Wharton Analytics Fellows.
+                    A research assistant at the <Link className="text-secondary hover:underline" href="https://ai-analytics.wharton.upenn.edu/">Wharton School of Business</Link>, working on analytics projects with Wharton partners such as Penn Sports Analytics and Wharton Analytics Fellows.
                   </p>
                 </li>
               </FadeInSection>
               <FadeInSection fadeDuration={500} slideDuration={500} distance="0">
                 <li className="mt-8">
                   <p>
-                    interested in data-driven software development to build innovative solutions at the intersection of machine learning, data science, and software engineering, with the primary goal of helping others
+                    A research assistant at the <Link className="text-secondary hover:underline" href="https://www.biomedinfolab.com/">Integrative Omics and Biomedical Informatics Lab</Link>, 
+                    working on projects at the intersection of clinical informatics and machine learning.
                   </p>
-                </li>
+                </li>  
               </FadeInSection>
             </ul>
             <FadeInSection fadeDuration={500} slideDuration={500} distance="5vh">

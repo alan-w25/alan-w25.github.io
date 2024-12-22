@@ -8,7 +8,7 @@ export default function Skills() {
   return (
     <section id="skills" className=" flex-col-reverse container mt-24 mx-auto flex items-center justify-between w-5/6 md:flex-row">
     <div id="current-skills" className="mt-8 md:mt:0">
-        <h1 className="text-secondary text-xl font-semibold" >technical skills</h1>
+        <h1 className="text-secondary text-xl font-semibold" >Technical Skills</h1>
         <ul className="mt-8 list-square text-md">
             <FadeInSection fadeDuration={300} slideDuration={400} distance="0">
               <li className="mt-4"> Programming Languages: <span> Python, Java, Javascript, SQL, R, HTML/CSS</span> </li>  

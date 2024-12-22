@@ -25,7 +25,7 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
             <FadeInSection fadeDuration={300} slideDuration={300} distance="5vh">
                 <h1 className="text-2xl text-secondary font-semibold">Please take a look at some of my projects below</h1>
             </FadeInSection>
-            <div id="coding-projects-home-container" className="w-full mx-auto flex flex-col mt-24">
+            {/*<div id="coding-projects-home-container" className="w-full mx-auto flex flex-col mt-24">
                 <FadeInSection fadeDuration={300} slideDuration={300} distance="5vh">
                     <div id="coding-projects-home-header" className="container w-full mx-auto flex flex-row justify-between"> 
                         <h2 id="coding-project-header" className="text-xl font-semibold text-black">Coding Projects</h2>
@@ -53,7 +53,7 @@ export default function WorkProjects({codeProjects, dataProjects} :workProjectPr
                         book={false}
                     />
                 </div>
-            </div>
+            </div>*/}
             <div id="data-projects-home-container" className="w-full mx-auto flex flex-col mt-24">
                 <FadeInSection fadeDuration={300} slideDuration={300} distance="5vh">
                     <div id="data-projects-home-header" className="container w-full mx-auto items-center flex flex-row justify-between">
