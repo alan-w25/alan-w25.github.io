@@ -10,7 +10,7 @@ import FadeInSection from './FadeInSection';
 export default function MissionStatement() {
 
     return (
-        <section id="mission-section" className="md:mt-36 container mx-auto w-10/12 items-center flex">
+        <section id="mission-section" className="md:mt-24 container mx-auto w-10/12 items-center flex">
           <div id="mission-container" className="flex md:flex-row flex-col-reverse w-full container md:space-y-0 md:space-x-10">
             <div id="mission-statement-container" className="flex flex-col w-full">
               <FadeInSection fadeDuration={300} slideDuration={300} distance="5vh">
@@ -19,7 +19,7 @@ export default function MissionStatement() {
                     <br/>
                     <ul>
                       <li>
-                        <p className="text-xl">An <span className="text-xl font-semibold text-secondary">aspiring data scientist</span>, with experience in web development, data science, and machine learning</p>
+                        <p className="text-xl">An <span className="text-xl font-semibold text-secondary">aspiring data scientist</span>, with experience working with data under all different contexts.</p>
                       </li>
                       <li className="mt-4">
                         <p className="text-xl">I have worked in marketing, healthcare, e-commerce, and human-computer interaction, of which my primary goal has always been to<span className="text-secondary text-xl font-semibold"> serve others with the solutions that I develop</span></p>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '@/components/Header'
-import PageFooter from '@/components/PageFooter'
+import Footer from '@/components/Footer'
 import PageGrid from '@/components/PageGrid';
 import { dataProjects } from './dataProjectsData';
 //images 
@@ -26,7 +26,7 @@ export default function DataPage() {
         book={false}
         />
       </div>
-      <PageFooter />
+      <Footer />
     </main>
   )
 }

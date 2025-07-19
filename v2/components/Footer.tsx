@@ -2,12 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 
 export default function Footer() {
-
-  const currentDate = new Date();
-  const month = currentDate.getMonth() + 1;
-  const day = currentDate.getDate();
-  const year = currentDate.getFullYear();
-  const formattedDate = month + "/" + day + "/" + year;
+  const lastUpdatedDate = process.env.NEXT_PUBLIC_LAST_COMMIT_DATE || "Date Not Available";
 
 
   return (
@@ -18,7 +13,7 @@ export default function Footer() {
         </div>
         <div className="container w-full flex flex-col md:flex-row md:justify-between">
           <a target="_blank" className="mt-1 font-extralight underline" rel="noopener noreferrer" href="https://alan-w25-github-io.vercel.app/">Previous Version</a>
-          <p className="mt-1 font-extralight">Last Updated: {formattedDate}</p>
+          <p className="mt-1 font-extralight">Last Updated: {lastUpdatedDate}</p>
         </div>
     </footer>
   )

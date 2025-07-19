@@ -20,7 +20,7 @@ export default function Skills() {
               <li className="mt-4">Developer Tools: Git, Postman, Figma, Docker, Azure CLI, Firebase, Expo CLI</li>
             </FadeInSection>
             <FadeInSection fadeDuration={300} slideDuration={400} distance="0">
-            <li className="mt-4">Data: Numpy, Pandas, Pytorch, Sci-kit Learn, MySQL, PostgreSQL</li>
+            <li className="mt-4">Data: Pandas, Pytorch, Sci-kit Learn, PostgreSQL, AWS Sagemaker, H2O.ai</li>
             </FadeInSection>
             <FadeInSection fadeDuration={300} slideDuration={400} distance="0">
               <li className="mt-4">Certifications: <Link className="hover:underline" href="https://www.coursera.org/account/accomplishments/specialization/N6QEVXP2P7RQ?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n">Deeplearning.AI Machine Learning Certification</Link>, 
