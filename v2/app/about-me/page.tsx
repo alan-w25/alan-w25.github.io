@@ -16,11 +16,13 @@ export default function AboutPage() {
       <Header currentUnderline='aboutme' />
       <div className="flex w-full flex-col md:flex-row container md:w-5/6 mx-auto md:mt-20 mt-4 flex-1 items-center">
         <div id="about-image-container" className="w-5/6 md:w-2/6">
-          <FadeInSection fadeDuration={250} slideDuration={250} distance="5vh">
+          <FadeInSection fadeDuration={250} slideDuration={300} distance="5vh">
             <Image 
             src= {AboutMe}
             alt="Alan Wu"
             className="rounded-3xl object-cover"
+            width={400}
+            height={400}
             />
           </FadeInSection>
         </div>
