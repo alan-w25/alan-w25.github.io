@@ -1,0 +1,63 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  type?: 'website' | 'article';
+  active?: 'writing' | 'projects' | 'about';
+  canonicalURL?: string;
+}
+
+const {
+  title,
+  description,
+  type = 'website',
+  active,
+  canonicalURL = Astro.url.href,
+} = Astro.props;
+
+const siteURL = 'https://alan-w25.github.io';
+const ogImage = `${siteURL}/images/og-card.png`;
+const fullTitle = title === 'Alan Wu' ? title : `${title} — Alan Wu`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content={type} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen" style="background-color: #F9F7F4;">
+    <div class="max-w-[680px] mx-auto px-6">
+      <Nav active={active} />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

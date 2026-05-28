@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects', ({ data }) => !data.draft);
+const projects = allProjects.sort((a, b) => Number(b.data.year) - Number(a.data.year));
+---
+
+<Base
+  title="Projects"
+  description="Projects by Alan Wu — data science, mobile, and web engineering."
+  active="projects"
+>
+  <section class="mt-12">
+    <h1 class="font-serif text-2xl font-normal mb-12" style="color: #1A1A1A;">Projects</h1>
+    {projects.length === 0 ? (
+      <p class="text-sm" style="color: #888888;">No projects yet — check back soon.</p>
+    ) : (
+      <ul class="list-none p-0 m-0 space-y-10">
+        {projects.map(project => (
+          <li class="pb-10 border-b" style="border-color: #E8E4DF;">
+            <div class="flex items-baseline justify-between mb-2">
+              <a
+                href={`/projects/${project.slug}`}
+                class="font-medium transition-colors hover:text-[#2A5C8A]"
+                style="color: #1A1A1A; text-decoration: none;"
+              >
+                {project.data.title}
+              </a>
+              <span class="text-sm ml-4 shrink-0" style="color: #888888;">{project.data.year}</span>
+            </div>
+            <p class="text-base mb-3" style="color: #888888;">{project.data.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {project.data.tags.map((tag: string) => (
+                <span class="text-xs px-2 py-0.5 rounded border" style="color: #888888; border-color: #E8E4DF;">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</Base>

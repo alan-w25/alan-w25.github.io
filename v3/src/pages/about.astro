@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+
+const ldJson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alan Wu",
+  "url": "https://alan-w25.github.io",
+  "email": "alan.lw25@gmail.com",
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Rutgers University" },
+    { "@type": "CollegeOrUniversity", "name": "University of Pennsylvania" }
+  ],
+  "sameAs": [
+    "https://github.com/alan-w25",
+    "https://linkedin.com/in/alanlwu"
+  ]
+};
+---
+
+<Base
+  title="About"
+  description="Alan Wu — data scientist and engineer pursuing his M.S.E in Data Science at UPenn."
+  active="about"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(ldJson)} />
+
+  <section class="mt-12">
+    <h1 class="font-serif text-2xl font-normal mb-10" style="color: #1A1A1A;">About</h1>
+
+    <div class="mb-8">
+      <img
+        src="/images/headshot.jpg"
+        alt="Alan Wu"
+        class="object-cover object-top"
+        style="width: min(240px, 100%); height: min(240px, 100%); object-fit: cover; object-position: center top; display: block;"
+      />
+    </div>
+
+    <div class="space-y-5 text-base leading-relaxed" style="max-width: 60ch; color: #1A1A1A;">
+      <p>
+        I'm Alan — a data scientist and engineer from New Jersey. I graduated from Rutgers University
+        with a B.S. in Computer Science and I'm currently pursuing my M.S.E in Data Science at the
+        University of Pennsylvania.
+      </p>
+      <p>
+        What drives me is the ability to build things that help people. I work at the intersection
+        of machine learning, data engineering, and software — and I write here about what I'm
+        learning, building, and thinking about.
+      </p>
+      <p>
+        Outside of work you'll find me trying to become a better home cook, playing ultimate frisbee,
+        or reading.
+      </p>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-4 items-center">
+      <a
+        href="/docs/Alan_Wu_resume.pdf"
+        target="_blank"
+        class="text-sm px-4 py-2 rounded border transition-colors hover:bg-[#1A1A1A] hover:text-[#F9F7F4]"
+        style="border-color: #1A1A1A; color: #1A1A1A; text-decoration: none;"
+      >
+        Resume
+      </a>
+      <a href="mailto:alan.lw25@gmail.com" class="text-sm transition-colors hover:text-[#1A1A1A]" style="color: #888888; text-decoration: none;">
+        Email
+      </a>
+      <a href="https://github.com/alan-w25" target="_blank" rel="noopener" class="text-sm transition-colors hover:text-[#1A1A1A]" style="color: #888888; text-decoration: none;">
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/alanlwu" target="_blank" rel="noopener" class="text-sm transition-colors hover:text-[#1A1A1A]" style="color: #888888; text-decoration: none;">
+        LinkedIn
+      </a>
+    </div>
+  </section>
+</Base>

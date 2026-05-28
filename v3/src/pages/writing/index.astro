@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('writing', ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+
+// Group by year
+const byYear = posts.reduce<Record<string, typeof posts>>((acc, post) => {
+  const year = post.data.date.getFullYear().toString();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {});
+
+const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
+---
+
+<Base
+  title="Writing"
+  description="Essays and notes by Alan Wu on data science, engineering, and more."
+  active="writing"
+>
+  <section class="mt-12">
+    <h1 class="font-serif text-2xl font-normal mb-12" style="color: #1A1A1A;">Writing</h1>
+    {posts.length === 0 ? (
+      <p class="text-sm" style="color: #888888;">No posts yet — check back soon.</p>
+    ) : (
+      years.map(year => (
+        <div class="mb-10">
+          <p class="text-sm mb-4" style="color: #888888;">{year}</p>
+          <ul class="list-none p-0 m-0 space-y-1">
+            {byYear[year].map(post => (
+              <li>
+                <a
+                  href={`/writing/${post.slug}`}
+                  class="flex justify-between items-baseline py-2 group border-b"
+                  style="text-decoration: none; border-color: #E8E4DF;"
+                >
+                  <span class="text-base transition-colors duration-150 group-hover:text-[#1A1A1A]" style="color: #888888;">
+                    {post.data.title}
+                  </span>
+                  <span class="text-sm ml-4 shrink-0" style="color: #888888;">
+                    {formatDate(post.data.date)}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    )}
+  </section>
+</Base>

@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('writing', ({ data }) => !data.draft);
+const recentPosts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+
+const allProjects = await getCollection('projects', ({ data }) => !data.draft);
+const recentProjects = allProjects
+  .sort((a, b) => Number(b.data.year) - Number(a.data.year))
+  .slice(0, 3);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+---
+
+<Base
+  title="Alan Wu"
+  description="Alan Wu — data scientist and engineer. Writing, projects, and more."
+>
+  <!-- Intro -->
+  <section class="mt-16 mb-16">
+    <p class="text-base leading-relaxed" style="color: #1A1A1A;">
+      Hi, I'm Alan — a data scientist and engineer currently pursuing my M.S.E in Data Science
+      at the University of Pennsylvania. I care about building things that help people,
+      and I write about what I'm learning along the way.
+    </p>
+  </section>
+
+  <hr class="mb-16" style="border-color: #E8E4DF;" />
+
+  <!-- Writing -->
+  <section class="mb-16">
+    <h2 class="font-serif text-xl mb-8 font-normal" style="color: #1A1A1A;">Writing</h2>
+    {recentPosts.length === 0 ? (
+      <p class="text-sm" style="color: #888888;">No posts yet — check back soon.</p>
+    ) : (
+      <ul class="list-none p-0 m-0 space-y-1">
+        {recentPosts.map(post => (
+          <li>
+            <a
+              href={`/writing/${post.slug}`}
+              class="flex justify-between items-baseline py-2 group"
+              style="text-decoration: none;"
+              transition:animate="fade"
+            >
+              <span class="text-base transition-colors duration-150 group-hover:text-[#1A1A1A]" style="color: #888888;">
+                {post.data.title}
+              </span>
+              <span class="text-sm ml-4 shrink-0" style="color: #888888;">
+                {formatDate(post.data.date)}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+    <div class="mt-6">
+      <a href="/writing" class="text-sm transition-colors" style="color: #888888; text-decoration: none;"
+        onmouseover="this.style.color='#1A1A1A'"
+        onmouseout="this.style.color='#888888'">
+        → All writing
+      </a>
+    </div>
+  </section>
+
+  <hr class="mb-16" style="border-color: #E8E4DF;" />
+
+  <!-- Projects -->
+  <section class="mb-16">
+    <h2 class="font-serif text-xl mb-8 font-normal" style="color: #1A1A1A;">Projects</h2>
+    {recentProjects.length === 0 ? (
+      <p class="text-sm" style="color: #888888;">No projects yet — check back soon.</p>
+    ) : (
+      <ul class="list-none p-0 m-0 space-y-6">
+        {recentProjects.map(project => (
+          <li>
+            <a
+              href={`/projects/${project.slug}`}
+              class="group"
+              style="text-decoration: none;"
+            >
+              <span class="text-base font-medium transition-colors group-hover:text-[#2A5C8A]" style="color: #1A1A1A;">
+                {project.data.title}
+              </span>
+              <span class="mx-2" style="color: #888888;">—</span>
+              <span class="text-base" style="color: #888888;">{project.data.description}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+    <div class="mt-6">
+      <a href="/projects" class="text-sm transition-colors" style="color: #888888; text-decoration: none;"
+        onmouseover="this.style.color='#1A1A1A'"
+        onmouseout="this.style.color='#888888'">
+        → All projects
+      </a>
+    </div>
+  </section>
+</Base>
