@@ -40,6 +40,8 @@ const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
                   href={`/writing/${post.slug}`}
                   class="flex justify-between items-baseline py-2 group border-b"
                   style="text-decoration: none; border-color: #E8E4DF;"
+                  onmouseover="this.style.textDecoration='underline'; this.style.textUnderlineOffset='4px';"
+                  onmouseout="this.style.textDecoration='none';"
                 >
                   <span class="text-base transition-colors duration-150 group-hover:text-[#1A1A1A]" style="color: #888888;">
                     {post.data.title}

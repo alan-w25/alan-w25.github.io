@@ -24,6 +24,8 @@ const projects = allProjects.sort((a, b) => Number(b.data.year) - Number(a.data.
                 href={`/projects/${project.slug}`}
                 class="font-medium transition-colors hover:text-[#2A5C8A]"
                 style="color: #1A1A1A; text-decoration: none;"
+                onmouseover="this.style.textDecoration='underline'; this.style.textUnderlineOffset='4px';"
+                onmouseout="this.style.textDecoration='none';"
               >
                 {project.data.title}
               </a>

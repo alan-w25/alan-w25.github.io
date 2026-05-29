@@ -21,9 +21,9 @@ const links = [
         <a
           href={link.href}
           class={`text-sm transition-colors ${
-            active === link.key ? 'text-[#1A1A1A]' : 'text-[#888888]'
+            active === link.key ? 'text-[#1A1A1A] underline underline-offset-4' : 'text-[#888888]'
           } hover:text-[#1A1A1A]`}
-          style="text-decoration: none;"
+          style="text-decoration-color: #1A1A1A;"
         >
           {link.label}
         </a>

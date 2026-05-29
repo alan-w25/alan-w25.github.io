@@ -26,7 +26,7 @@ function formatDate(date: Date) {
     <p class="text-base leading-relaxed" style="color: #1A1A1A;">
       Hi, I&apos;m Alan. I&apos;m a software engineer and data scientist by training.
       Currently, I&apos;m a forward deployed engineer at
-      <a href="https://taktile.com" target="_blank" rel="noopener">Taktile</a>.
+      <a href="https://taktile.com" style="color:blue" target="_blank" rel="noopener">Taktile</a>.
       I just wrapped up my M.S.E in Data Science at the University of Pennsylvania and have spent my time there exploring my interests in healthcare and finance.
       <br><br>
       I studied Computer Science, Data Science, and Statistics at Rutgers University, and am currently based in the NJ/NYC area. My focus right now is to navigate life in my 20s through learning new things and developing new connections. I care about building things that help people, and I write about what I&apos;m learning along the way. 
@@ -52,6 +52,8 @@ function formatDate(date: Date) {
               class="flex justify-between items-baseline py-2 group"
               style="text-decoration: none;"
               transition:animate="fade"
+              onmouseover="this.style.textDecoration='underline'; this.style.textUnderlineOffset='4px';"
+              onmouseout="this.style.textDecoration='none';"
             >
               <span class="text-base transition-colors duration-150 group-hover:text-[#1A1A1A]" style="color: #888888;">
                 {post.data.title}
@@ -88,6 +90,8 @@ function formatDate(date: Date) {
               href={`/projects/${project.slug}`}
               class="group"
               style="text-decoration: none;"
+              onmouseover="this.style.textDecoration='underline'; this.style.textUnderlineOffset='4px';"
+              onmouseout="this.style.textDecoration='none';"
             >
               <span class="text-base font-medium transition-colors group-hover:text-[#2A5C8A]" style="color: #1A1A1A;">
                 {project.data.title}
