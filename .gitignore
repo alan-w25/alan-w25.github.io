@@ -1,5 +1,8 @@
 .vercel
 /v1/node_modules
 /v2/node_modules
+/v3/node_modules
+/v3/dist
+/v3/.astro
 .DS_Store
 .gstack/
