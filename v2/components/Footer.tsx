@@ -12,7 +12,10 @@ export default function Footer() {
           <p className="mt-2 md:mt-0">Feel free to contact me at <Link className="underline text-secondary" href="mailto:alan.lw25@gmail.com">alan.lw25@gmail.com</Link> or connect with me on <Link className="underline text-secondary" href="https://www.linkedin.com/in/alanlwu">Linkedin</Link></p>
         </div>
         <div className="container w-full flex flex-col md:flex-row md:justify-between">
-          <a target="_blank" className="mt-1 font-extralight underline" rel="noopener noreferrer" href="https://alan-w25-github-io.vercel.app/">Previous Version</a>
+          <div className="flex flex-row gap-4 mt-1">
+            <a target="_blank" className="font-extralight underline" rel="noopener noreferrer" href="https://alan-w25-github-io.vercel.app/">Previous Version</a>
+            <Link className="font-extralight underline" href="/privacy">Privacy Policy</Link>
+          </div>
           <p className="mt-1 font-extralight">Last Updated: {lastUpdatedDate}</p>
         </div>
     </footer>
